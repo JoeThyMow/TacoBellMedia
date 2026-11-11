@@ -1,27 +1,29 @@
-# Taco Bell Media — Purple Edition
+# Taco Bell Media
 
-Complete Jekyll website for GitHub Pages at https://joethymow.github.io/TacoBellMedia/
+Purple-and-white, mid-2000s corporate news site, built with Jekyll for GitHub Pages.
 
-## Deployment
-Upload the **contents** of this folder to the root of the `joethymow/TacoBellMedia` repository (not the containing folder). Replace existing files. In Settings → Pages, use the Jekyll GitHub Actions workflow.
+## Publish
+Add a Markdown file in `_posts/` named `YYYY-MM-DD-headline.md`:
 
-## Publish an article
-Add a file named `YYYY-MM-DD-story-title.md` to `_posts/` with front matter:
-
-```yaml
+```markdown
 ---
 layout: post
-title: "Story headline"
-date: 2026-11-11
-author: Editorial Staff
-category: Politics
-description: "Short summary"
+title: "Your headline"
+date: 2026-11-11 12:00:00 -0500
+author: "Your name"
+category: "Politics"
+description: "A one-sentence summary of the report."
+# Optional: image: "/assets/images/story-photo.jpg"
 ---
 
-Write the story here.
+Your article text here.
 ```
 
-The homepage and archive automatically display posts.
+The **NEWSWIRE** strip scrolls the latest eight headlines automatically. Hover or focus it to pause. Reduced-motion settings disable the animation. There is no external feed or server.
 
-## Theme
-Purple/white theme, bundled Taco Bell logo, and embedded CSS fallback in `_includes/site.css` to avoid unstyled pages. The Jekyll `relative_url` filter handles the `/TacoBellMedia` project path.
+## Deploy
+Upload the contents of this ZIP to the root of `joethymow/TacoBellMedia`. GitHub Pages → GitHub Actions → Jekyll. `_config.yml` is configured for `/TacoBellMedia`.
+
+To change the design, edit `assets/css/style.css`. `_includes/site.css` is an identical fallback copy used inline if external styles fail. Keep both in sync.
+
+Before replacing your repository, back up any existing articles in `_posts/` and any custom images.
