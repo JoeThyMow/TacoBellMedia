@@ -1,0 +1,11 @@
+title: Taco Bell Media
+description: Independent coverage of politics, government, and community.
+url: ""
+baseurl: ""
+markdown: kramdown
+permalink: /articles/:title/
+collections:
+  pages:
+    output: true
+exclude:
+  - README.md

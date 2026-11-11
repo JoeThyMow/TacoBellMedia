@@ -1,0 +1,8 @@
+---
+layout: default
+title: All Articles
+permalink: /articles/
+---
+<section class="page-heading"><p class="eyebrow">ARCHIVE</p><h1>All articles</h1><p>Explore reporting, analysis, and commentary.</p><input id="search" type="search" placeholder="Search headlines, authors, categories..." aria-label="Search articles"></section>
+<div class="grid" id="articles">{% for post in site.posts %}<a class="story" data-search="{{ post.title | downcase | escape }} {{ post.author | downcase | escape }} {{ post.category | downcase | escape }} {{ post.description | downcase | escape }}" href="{{ post.url | relative_url }}">{% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">{% else %}<div class="placeholder">TB<span>MEDIA</span></div>{% endif %}<div class="story-inner"><span class="eyebrow">{{ post.category | default: 'News' }}</span><h3>{{ post.title }}</h3><p>{{ post.description | default: post.excerpt | strip_html | truncate: 140 }}</p><small>{{ post.date | date: '%B %-d, %Y' }}</small></div></a>{% endfor %}</div><p id="empty" hidden>No matching articles found.</p>
+<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
